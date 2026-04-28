@@ -1,0 +1,134 @@
+\chapter{Praktická část}
+\section{Popis dat}
+
+\section{Popis dat}
+
+Poskytovatelem dat je Datové centrum Ústeckého kraje (DCUK), které spravuje a zpřístupňuje data z různých systémů veřejné správy.
+Použitý dataset má velikost přibližně 650 MB a obsahuje zhruba 600 tisíc záznamů. Data jsou ve strukturovaném formátu CSV.
+Jedná se o záznamy ze systému pro sledování pohybu vozidel správy a údržby silnic. 
+Každý záznam obsahuje zejména identifikátor vozidla, typ aktivity a geografickou polohu. 
+Tyto informace umožňují analýzu pohybu vozidel v čase a prostoru, například pro vyhodnocení efektivity údržby silniční sítě nebo sledování tras jednotlivých vozidel.
+
+\section{Předběžná srovnávací analýza systémů}
+
+% proč to vzniklo, kdy to zvzniklo, lehká historie
+\subsection{ClickHouse}
+
+ClickHouse je sloupcově orientovaná databáze určená pro analytické dotazy v reálném čase (OLAP), původně vyvinutá společností Yandex jako interní nástroj pro zpracování velkých objemů dat. 
+Později byla uvolněna jako open-source projekt a postupně se stala jednou z populárních databází pro analytické zpracování dat. \cite{clickhouseintro}
+Hlavním důvodem vzniku ClickHouse byla potřeba efektivního zpracování a analýzy rozsáhlých logových a telemetrických dat v reálném čase, kde tradiční relační databáze nedokázaly splnit požadavky na výkon.
+
+ClickHouse je dostupný jak ve formě open-source řešení pro self-hosting, tak i jako plně spravovaná cloudová služba. Open-source varianta umožňuje nasazení na vlastních serverech nebo v libovolném cloudovém prostředí.
+
+\subsection{MariaDB ColumnStore}
+
+MariaDB ColumnStore je sloupcové rozšíření relační databáze MariaDB zaměřené na analytické zpracování velkých objemů dat. 
+
+ColumnStore umožňuje distribuované zpracování dat a paralelizaci dotazů, což výrazně zlepšuje výkon při práci s rozsáhlými datasetty. 
+Je vhodný zejména pro analytické reporty a agregace nad velkými tabulkami. \cite{mariadbcolumnstore}
+
+\subsection{InfluxDB}
+
+InfluxDB je časově orientovaná databáze navržená pro ukládání a analýzu dat závislých na čase, například metrik, senzorických dat nebo logů.
+
+Vznikla v roce 2013 společností InfluxData jako odpověď na rostoucí potřebu efektivního ukládání a dotazování časových řad. 
+Je optimalizována pro vysokou rychlost zápisu a práci s časovými intervaly, což ji činí vhodnou pro IoT, monitoring a observabilitu systémů. \cite{influxdbdocs}
+
+\subsection{IoTDB}
+
+IoTDB je časově orientovaná databáze vyvinutá Apache Software Foundation zaměřená na IoT scénáře a edge computing.
+
+Byla navržena pro efektivní ukládání a zpracování velkého množství senzorických dat s vysokou frekvencí zápisu. 
+Podporuje hierarchickou strukturu dat a je optimalizována pro nízké nároky na úložiště i výpočetní výkon. \cite{iotdbdocs}
+
+\subsection{MariaDB}
+
+MariaDB je relační databázový systém vzniklý jako fork MySQL po jeho převzetí společností Oracle v roce 2009. Cílem projektu bylo zachovat open-source charakter a komunitní vývoj.
+
+MariaDB je široce používaná pro transakční systémy, webové aplikace a běžné ukládání strukturovaných dat. 
+Nabízí vysokou kompatibilitu s MySQL a stabilní výkon pro klasické databázové operace. \cite{mariadbdocs}
+
+\subsection{MongoDB}
+
+MongoDB je dokumentově orientovaná NoSQL databáze, která ukládá data ve formátu BSON (binární JSON). 
+Byla navržena pro flexibilní práci se schématy a snadnou škálovatelnost.
+
+Je vhodná pro aplikace, kde se struktura dat často mění, například webové služby, katalogy nebo IoT aplikace. \cite{mongodbdocs}
+
+\subsection{QuestDB}
+
+QuestDB je vysoce výkonná open-source time-series databáze zaměřená na nízkou latenci a vysokou propustnost při zpracování dat v reálném čase.
+
+Byla navržena s důrazem na jednoduchost, SQL kompatibilitu a extrémně rychlé dotazy nad časovými řadami. 
+Využívá se zejména v oblasti finančních dat, monitoringu a IoT. \cite{questdbdocs}
+
+\subsection{TimescaleDB}
+
+TimescaleDB je rozšíření relační databáze PostgreSQL zaměřené na práci s časovými řadami. Kombinuje klasický SQL přístup s optimalizacemi pro time-series data.
+
+Vznikla v roce 2017 jako open-source projekt s cílem propojit výhody relačního modelu a specializovaných time-series databází. 
+Je vhodná pro monitoring, IoT a analytické systémy, kde je potřeba jak flexibilita SQL, tak efektivní práce s časem. \cite{timescaledbdocs}
+ 
+\myworries{Dopsat informace k jednotlivým databázím}
+
+\section{Návrh testovacího scénáře}
+
+Testovací prostředí je postaveno na virtualizační technologii LXD, která umožňuje vytváření izolovaných kontejnerů s 
+nízkou režijní náročností. Každý testovaný databázový systém běží ve svém samostatném LXD kontejneru, čímž je 
+zajištěna oddělenost prostředí a reprodukovatelnost výsledků. Všechny kontejnery mají přidělené stejné hardwarové prostředky, aby 
+byly výsledky jednotlivých testů mezi databázemi porovnatelné.
+
+Proces vytváření kontejnerů, instalace databázových systémů a spuštění testů je plně automatizován pomocí 
+nástroje Ansible. Tím je zajištěna reprodukovatelnost testovacího prostředí napříč všemi testy a minimalizace lidského zásahu.
+
+Struktura Ansible projektu je navržena modulárně:
+
+\begin{itemize}
+    \item \textbf{Vytvoření kontejneru} \\
+    Pomocí Ansible modulu \texttt{community.general.lxd\_container} je vytvořen nový LXD kontejner se specifikovanými parametry.
+    
+    \item \textbf{Instalace databázového systému} \\
+    Po vytvoření kontejneru následuje instalace zvolného databázového systému podle odpovídající Ansible role. 
+    Každý systém má vlastní roli, která zajišťuje instalaci, konfiguraci a spuštění služby.
+    
+    \item \textbf{Příprava na testování} \\
+    Po instalaci databáze je kontejner nakonfigurován pro testování. 
+    Nahrájí se testovací skripty, dataset a konfigurační soubory.
+\end{itemize} 
+
+% připravit archi schéma
+
+Cílem testovacího scénáře je porovnat vybrané databázové systémy z hlediska výkonu ve vybraných testech. Testy budou zaměřeny na následující oblasti:
+\begin{itemize}
+    \item Rychlost jednorázového zápisu dat 
+    \item Vrácení jednoho specifického záznamu
+    \item Vrácení všech záznamů za určitý časový interval
+    \item Vrácení všech záznamů splňujících určitou podmínku
+    \item Agregační dotazy
+    \item Rychlost zápisu dat v reálném čase
+\end{itemize}
+
+Během všech testů se budou sbírat metriky jako doba trvání dotazu, využití CPU, využití paměti a I/O operace disku.
+Všechny tyto metriky budou následně zapsány přes Node Exportery v každém virtuálním stroji.
+Ty budou následně dány k dispozici službě Prometheus, která bude zajišťovat sběr a uchovávání těchto metrik pro následnou analýzu a vizualizaci Grafanou.
+
+Veškeré testy se budou provádět na stejném hardwarovém vybavení a za stejných podmínek, na virtuálních strojích s předem definovanými parametry (CPU, RAM, diskový prostor).
+
+
+\section{Konfigurace testovacího prostředí a databázových systémů}
+
+% pospat jak se konfiguruje LXD
+% speciální konfigurace DB
+
+\section{Pilotní nasazení systémů}
+
+% popsat proxmox vpn
+% popsat vpn
+% popsat ntb hardware
+% popsat vpn hardware
+
+\section{Implementace testů}
+
+% popsat spouštění testu
+% popsat prometheus a node exporter
+% popsat sběr dat
