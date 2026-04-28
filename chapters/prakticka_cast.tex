@@ -1,5 +1,4 @@
 \chapter{Praktická část}
-\section{Popis dat}
 
 \section{Popis dat}
 
@@ -117,18 +116,159 @@ Veškeré testy se budou provádět na stejném hardwarovém vybavení a za stej
 
 \section{Konfigurace testovacího prostředí a databázových systémů}
 
+\subsection{Virtualizace}
+Cílem bylo vytvořit testovací prostředí, které bude co nejvíce izolované a zároveň umožní snadnou správu a automatizaci.
+Z těchto důvodů jsem si zvolil virtualizační technologii LXD, která umožňuje vytváření a správu kontejnerů a virtuálních strojů.
+
+Zvolil jsem si virtuální stroje pro jejich větší izolaci a lepší kontrolu nad prostředím, ve kterém budou testy probíhat.
+To zajistí, že výsledky testů budou co nejvíce objektivní a porovnatelné mezi jednotlivými databázovými systémy.
+
+Další výhodou tohoto přístupu je možnost snadno resetovat testovací prostředí mezi jednotlivými testy, což zajišťuje konzistenci a reprodukovatelnost výsledků.
+\subsection{Architektura}
+Každý testovaný databázový systém běží ve svém samostatném LXD kontejneru, který je nakonfigurován s přidělenými hardwarovými prostředky (CPU, RAM, diskový prostor).
+
+Při vytvoření kontejneru se do něj nainstaluje zvolený databázový systém a Node Exporter pro sběr metrik.
+
+Na vyhrazeném virtuálním zdroji běží Grafana a Prometheus, které zajišťují sběr a vizualizaci metrik z jednotlivých kontejnerů.
+
+\subsection{Ansible}
+\begin{lstlisting}[caption={Struktura adresářů pro Ansible}, label={lst:ansiblestructure}, captionpos=b]
+    root/
+    |
+    |-- ansible.cfg
+    |-- setup.sh
+    |-- run_test.sh
+    |-- run_live_insert.sh
+    |
+    |-- setup/
+    |   |-- setup.yml
+    |   |-- setup_monitoring.yml
+    |   \-- reload_prometheus.yml
+    |
+    |-- vars/
+    |   |-- resource_profiles.yml
+    |   \-- test_types.yml
+    |
+    |-- roles/
+    |   |-- common-create/
+    |   |-- common-start/
+    |   |-- common-post-processing/
+    |   |-- profile-loader/
+    |   |-- node-exporter/
+    |   |-- monitoring/
+    |   |   |-- tasks/
+    |   |   |-- templates/
+    |   |   \-- files/
+    |   |
+    |   |-- clickhousedb/
+    |   |   |-- tasks/
+    |   |   |   |-- install.yml
+    |   |   |   \-- setup_database.yml
+    |   |   \-- defaults/
+    |   |       \-- main.yml
+    |   |
+    |   |-- ...
+    |   \-- columnstoredb/
+    |
+    \-- tests/
+        |-- clickhousedb/
+        |   |-- insert.yml
+        |   |-- aggregate.yml
+        |   |-- condition.yml
+        |   |-- single_point.yml
+        |   \-- live_insert.yml
+        |
+        |-- ...
+        |-- columnstoredb/
+        \--  generate_live_data.py
+\end{lstlisting}
+Projekt se skládá z několika klíčových adresářů a souborů:
+\begin{itemize}
+    \item \textbf{inventory/} \\
+    Inventář obsahuje definice hostů, databázových systémů, které mají přednastavenou IP adresu.
+    \item \textbf{roles/} \\
+    Role v projektu bych rozdělil do 3 kategorií:
+    \begin{itemize}
+        \item \textbf{common} \\
+        Obsahuje role pro vytváření kontejnerů, jejich spuštění a post-processing výsledků.
+        \item \textbf{monitoring} \\
+        Role pro instalaci a konfiguraci Node Exporterů, Prometheus a Grafany.
+        \item \textbf{databases} \\
+        Každý testovaný databázový systém má svou vlastní roli, která obsahuje úkoly pro instalaci, konfiguraci a spuštění služby.
+        Dále obsahuje i datový soubor, který následně testovací skripty použijí pro naplnění databáze testovacím datasetem.
+    \end{itemize}
+    \item \textbf{tests/} \\
+    Adresář obsahuje definice testů pro jednotlivé databázové systémy.
+    \item \textbf{setup/} \\
+    Adresář obsahuje ansible playbooku, které slouží jako vstupní body pro vytvoření testovacího prostředí a nastavení monitorovacího systému.
+\end{itemize}
+
+\subsection{Konfigurace databází}
 % pospat jak se konfiguruje LXD
 % speciální konfigurace DB
 
 \section{Pilotní nasazení systémů}
 
+Pilotní testovaní bylo provedeno na mém osobním notebooku, který má následující hardwarové parametry:
+\begin{itemize}
+    \item AMD Ryzen™ 5 5600H (max. zvýšený takt 4,2 GHz, 16 MB mezipaměti L3, 6 jader, 12 vláken)
+    \item 16GB paměť DDR4-3200 MHz RAM (2x 8 GB)
+    \item NVIDIA® GeForce® GTX 1650 (4 GB vyhrazené paměti GDDR6)
+    \item Disková jednotka SSD 512 GB PCIe® NVMe™ M.2
+    \item Integrovaná síťová karta 10/100/1000 GbE LAN
+\end{itemize}
+Na notebooku je nainstalován operační systém Ubuntu 22.04 LTS v minimální (serverové) konfiguraci bez grafického uživatelského rozhraní. 
+Systém je ovládán výhradně prostřednictvím příkazové řádky (CLI).
+Minimální konfiguraci jsem zvolil z důvodu optimalizace výkonu a minimalizace spotřeby systémových prostředků, které by mohly ovlivnit výsledky testů.
+
 % popsat proxmox vpn
 % popsat vpn
-% popsat ntb hardware
 % popsat vpn hardware
 
 \section{Implementace testů}
+Pro testování databázových systémů jsem následující sadu testů:
+\begin{itemize}
+    \item \textbf{Insert test} \\
+    Test zaměřený na měření rychlosti zápisu dat do databáze.
+    \item \textbf{Single point test} \\
+    Test zaměřený na měření rychlosti vrácení jednoho specifického záznamu z databáze.
+    \item \textbf{Condition test} \\
+    Test zaměřený na měření rychlosti vrácení všech záznamů splňujících určitou podmínku.
+    Jako podmínku jsem si zvolil vrácení všech záznamů, které mají polohu v určitém geografickém rozsahu za určité období.
+    \item \textbf{Aggregate test} \\
+    Test zaměřený na měření rychlosti provedení agregačního dotazu nad databází.
+    V agregačním testu jsem zvolil dotaz, který vrací průměrnou rychlost, maximální rychlost a počet záznamů pro každé vozidlo za určité období.
+\end{itemize}
+Všechny tyto testy se spouští pomocí skriptu \texttt{run\_test.sh}, který přijímá parametry pro výběr databázového systému a typu testu.
+\begin{lstlisting}[caption={Příklad spuštění live insert testu}, label={lst:liveinsert}, captionpos=b]
+    ./run_test.sh -d clickhousedb -t insert
+\end{lstlisting}
+\begin{itemize}
+     \item \textbf{Live insert test} \\
+    Test zaměřený na měření rychlosti zápisu dat v reálném čase, kdy se do databáze kontinuálně vkládají nové záznamy.
+    Má své speciální parametry:
+    \begin{itemize}
+        \item \textbf{workers} \\
+        Počet paralelních zdrojů, které vkládají data do databáze.
+        \item \textbf{duration} \\
+        Celková doba v sekundách, po kterou bude test probíhat.
+        \item \textbf{batch\_size} \\
+        Počet záznamů v jedné dávce, která bude vložena do databáze najednou.
+    \end{itemize}
+    Test se zavolá následujícím způsobem:
+    \begin{lstlisting}[caption={Příklad spuštění live insert testu}, label={lst:liveinsert}, captionpos=b]
+    ./run_live_insert.sh -d clickhousedb -w 4 -t 300 -b 1000
+    \end{lstlisting}
+    Příkaz nastavý test pro databázový systém ClickHouse přes parametr \texttt{-d}, počet zdrojů na 4 přes parametr \texttt{-w}, dobu trvání testu na 300 sekund (5 minut) přes parametr \texttt{-t} a velikost dávky na 1000 záznamů přes parametr \texttt{-b}.
+\end{itemize}
 
-% popsat spouštění testu
-% popsat prometheus a node exporter
-% popsat sběr dat
+Ze všech testů se sbírají metriky dvojím způsobem:
+\begin{itemize}
+    \item \textbf{NDJSON výsledky} \\
+    Po dokončení každého testu se výsledky ukládají do souboru ve formátu NDJSON (Newline Delimited JSON), který obsahuje informace o době trvání dotazu, počtu záznamů vrácených dotazem...
+    \item \textbf{Prometheus metriky} \\
+    Během testů se v každém kontejneru sbírají metriky pomocí Node Exporteru, které jsou následně shromažďovány službou Prometheus. 
+    Tyto metriky zahrnují využití CPU, využití paměti, I/O operace disku a síťovou aktivitu.
+\end{itemize}
+
+

@@ -43,8 +43,8 @@
       \strng{authornamehash}{27a60095382b21708920207c7fddcc05}
       \strng{authorfullhash}{27a60095382b21708920207c7fddcc05}
       \strng{authorfullhashraw}{27a60095382b21708920207c7fddcc05}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -80,8 +80,8 @@
       \strng{authornamehash}{79309b660b51210e80b3fd62a840e887}
       \strng{authorfullhash}{79309b660b51210e80b3fd62a840e887}
       \strng{authorfullhashraw}{79309b660b51210e80b3fd62a840e887}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9781492041658}
@@ -111,8 +111,8 @@
       \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
       \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Online. Microsoft.}
@@ -143,8 +143,8 @@
       \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
       \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Online. Microsoft.}
@@ -174,8 +174,8 @@
       \strng{authornamehash}{e111446745a1825b862f8727ae63bce4}
       \strng{authorfullhash}{e111446745a1825b862f8727ae63bce4}
       \strng{authorfullhashraw}{e111446745a1825b862f8727ae63bce4}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Online. Redis.}
@@ -205,8 +205,9 @@
       \strng{authornamehash}{206e3718af092fd1d12f80cae771ccac}
       \strng{authorfullhash}{206e3718af092fd1d12f80cae771ccac}
       \strng{authorfullhashraw}{206e3718af092fd1d12f80cae771ccac}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Online. MongoDB.}
@@ -409,8 +410,8 @@
       \strng{authorfullhash}{d3c35b96ff67d4842e7c033033f8a568}
       \strng{authorfullhashraw}{d3c35b96ff67d4842e7c033033f8a568}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Online. Red Hat.}
@@ -424,6 +425,200 @@
       \endverb
       \verb{url}
       \verb https://docs.ansible.com
+      \endverb
+    \endentry
+    \entry{jinja2docs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=f3d8cfa34eada4bf367437d57fa14f0f}{%
+           family={Jinja2},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{fullhash}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{fullhashraw}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{bibnamehash}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{authorbibnamehash}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{authornamehash}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{authorfullhash}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \strng{authorfullhashraw}{f3d8cfa34eada4bf367437d57fa14f0f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. Jinja2.}
+      \field{title}{Jinja2 Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://jinja.palletsprojects.com/
+      \endverb
+      \verb{url}
+      \verb https://jinja.palletsprojects.com/
+      \endverb
+    \endentry
+    \entry{prometheusdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=e1723a08afd7bca35570fd31a7656f59}{%
+           family={Prometheus},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{fullhash}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{fullhashraw}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{bibnamehash}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{authorbibnamehash}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{authornamehash}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{authorfullhash}{e1723a08afd7bca35570fd31a7656f59}
+      \strng{authorfullhashraw}{e1723a08afd7bca35570fd31a7656f59}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. Prometheus.}
+      \field{title}{Prometheus Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://prometheus.io/docs/
+      \endverb
+      \verb{url}
+      \verb https://prometheus.io/docs/
+      \endverb
+    \endentry
+    \entry{grafanadocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=3e9771a55288d8d734fcdf357714fa0d}{%
+           family={Labs},
+           familyi={L\bibinitperiod},
+           given={Grafana},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{fullhash}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{fullhashraw}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{bibnamehash}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{authorbibnamehash}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{authornamehash}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{authorfullhash}{3e9771a55288d8d734fcdf357714fa0d}
+      \strng{authorfullhashraw}{3e9771a55288d8d734fcdf357714fa0d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. Grafana Labs.}
+      \field{title}{Grafana Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://grafana.com/docs/
+      \endverb
+      \verb{url}
+      \verb https://grafana.com/docs/
+      \endverb
+    \endentry
+    \entry{kleppmann2017designing}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=34b8d5b1d29d175527a6642f3ec8a76d}{%
+           family={Kleppmann},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{fullhash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{fullhashraw}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{bibnamehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authorbibnamehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authornamehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authorfullhash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authorfullhashraw}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781491903100}
+      \field{title}{Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems}
+      \field{year}{2017}
+      \field{pages}{616}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://books.google.cz/books?id=p1heDgAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.cz/books?id=p1heDgAAQBAJ
+      \endverb
+    \endentry
+    \entry{chaosmonkeydocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=89a1b2cc2425854cf51be9e7c7821c75}{%
+           family={Monkey},
+           familyi={M\bibinitperiod},
+           given={Chaos},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{fullhash}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{fullhashraw}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{bibnamehash}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{authorbibnamehash}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{authornamehash}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{authorfullhash}{89a1b2cc2425854cf51be9e7c7821c75}
+      \strng{authorfullhashraw}{89a1b2cc2425854cf51be9e7c7821c75}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. Chaos Monkey.}
+      \field{title}{Chaos Monkey}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://netflix.github.io/chaosmonkey/
+      \endverb
+      \verb{url}
+      \verb https://netflix.github.io/chaosmonkey/
+      \endverb
+    \endentry
+    \entry{lsmtree}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=05eff963a703df45c6c65778a86dab71}{%
+           family={ScyllaDB},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{05eff963a703df45c6c65778a86dab71}
+      \strng{fullhash}{05eff963a703df45c6c65778a86dab71}
+      \strng{fullhashraw}{05eff963a703df45c6c65778a86dab71}
+      \strng{bibnamehash}{05eff963a703df45c6c65778a86dab71}
+      \strng{authorbibnamehash}{05eff963a703df45c6c65778a86dab71}
+      \strng{authornamehash}{05eff963a703df45c6c65778a86dab71}
+      \strng{authorfullhash}{05eff963a703df45c6c65778a86dab71}
+      \strng{authorfullhashraw}{05eff963a703df45c6c65778a86dab71}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. ScyllaDB.}
+      \field{title}{Log-Structured Merge-Tree Definition}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.scylladb.com/glossary/log-structured-merge-tree/
+      \endverb
+      \verb{url}
+      \verb https://www.scylladb.com/glossary/log-structured-merge-tree/
       \endverb
     \endentry
     \entry{clickhouseintro}{online}{}{}
@@ -441,8 +636,8 @@
       \strng{authorfullhash}{431fce03ced70d56c9ebc70ed3daa1b6}
       \strng{authorfullhashraw}{431fce03ced70d56c9ebc70ed3daa1b6}
       \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Online. ClickHouse.}
@@ -456,6 +651,228 @@
       \endverb
       \verb{url}
       \verb https://clickhouse.com/docs/intro
+      \endverb
+    \endentry
+    \entry{mariadbcolumnstore}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7f9733e208088b1ce6df3d4be1765396}{%
+           family={MariaDB},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{fullhash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{fullhashraw}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{bibnamehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authorbibnamehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authornamehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authorfullhash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authorfullhashraw}{7f9733e208088b1ce6df3d4be1765396}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. MariaDB.}
+      \field{title}{MariaDB ColumnStore}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://mariadb.com/docs/analytics/mariadb-columnstore
+      \endverb
+      \verb{url}
+      \verb https://mariadb.com/docs/analytics/mariadb-columnstore
+      \endverb
+    \endentry
+    \entry{influxdbdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=aeaf5074e9f38f1268187fc89e1e8d54}{%
+           family={InfluxData},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{fullhash}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{fullhashraw}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{bibnamehash}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{authorbibnamehash}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{authornamehash}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{authorfullhash}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \strng{authorfullhashraw}{aeaf5074e9f38f1268187fc89e1e8d54}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. InfluxData.}
+      \field{title}{InfluxDB Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.influxdata.com/influxdb/latest/
+      \endverb
+      \verb{url}
+      \verb https://docs.influxdata.com/influxdb/latest/
+      \endverb
+    \endentry
+    \entry{iotdbdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=6dd65b715b14513781d9dde6b29ef2e7}{%
+           family={IoTDB},
+           familyi={I\bibinitperiod},
+           given={Apache},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{fullhash}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{fullhashraw}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{bibnamehash}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{authorbibnamehash}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{authornamehash}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{authorfullhash}{6dd65b715b14513781d9dde6b29ef2e7}
+      \strng{authorfullhashraw}{6dd65b715b14513781d9dde6b29ef2e7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. Apache IoTDB.}
+      \field{title}{Apache IoTDB Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://iotdb.apache.org/UserGuide/latest/IoTDB-Introduction/IoTDB-Introduction_apache.html
+      \endverb
+      \verb{url}
+      \verb https://iotdb.apache.org/UserGuide/latest/IoTDB-Introduction/IoTDB-Introduction_apache.html
+      \endverb
+    \endentry
+    \entry{mariadbdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7f9733e208088b1ce6df3d4be1765396}{%
+           family={MariaDB},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{fullhash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{fullhashraw}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{bibnamehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authorbibnamehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authornamehash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authorfullhash}{7f9733e208088b1ce6df3d4be1765396}
+      \strng{authorfullhashraw}{7f9733e208088b1ce6df3d4be1765396}
+      \field{extraname}{2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. MariaDB.}
+      \field{title}{MariaDB Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://mariadb.com/docs/
+      \endverb
+      \verb{url}
+      \verb https://mariadb.com/docs/
+      \endverb
+    \endentry
+    \entry{mongodbdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=206e3718af092fd1d12f80cae771ccac}{%
+           family={MongoDB},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{206e3718af092fd1d12f80cae771ccac}
+      \strng{fullhash}{206e3718af092fd1d12f80cae771ccac}
+      \strng{fullhashraw}{206e3718af092fd1d12f80cae771ccac}
+      \strng{bibnamehash}{206e3718af092fd1d12f80cae771ccac}
+      \strng{authorbibnamehash}{206e3718af092fd1d12f80cae771ccac}
+      \strng{authornamehash}{206e3718af092fd1d12f80cae771ccac}
+      \strng{authorfullhash}{206e3718af092fd1d12f80cae771ccac}
+      \strng{authorfullhashraw}{206e3718af092fd1d12f80cae771ccac}
+      \field{extraname}{2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. MongoDB.}
+      \field{title}{MongoDB Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.mongodb.com/docs/
+      \endverb
+      \verb{url}
+      \verb https://www.mongodb.com/docs/
+      \endverb
+    \endentry
+    \entry{questdbdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=72952f423258ed3b9abeb605d1b98d1a}{%
+           family={QuestDB},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{fullhash}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{fullhashraw}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{bibnamehash}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{authorbibnamehash}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{authornamehash}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{authorfullhash}{72952f423258ed3b9abeb605d1b98d1a}
+      \strng{authorfullhashraw}{72952f423258ed3b9abeb605d1b98d1a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. QuestDB.}
+      \field{title}{QuestDB Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://questdb.io/docs/
+      \endverb
+      \verb{url}
+      \verb https://questdb.io/docs/
+      \endverb
+    \endentry
+    \entry{timescaledbdocs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7b05eae0c6e46f226fe3ae99a4b220f0}{%
+           family={TimescaleDB},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{fullhash}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{fullhashraw}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{bibnamehash}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{authorbibnamehash}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{authornamehash}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{authorfullhash}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \strng{authorfullhashraw}{7b05eae0c6e46f226fe3ae99a4b220f0}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Online. TimescaleDB.}
+      \field{title}{TimescaleDB Documentation}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.timescale.com/
+      \endverb
+      \verb{url}
+      \verb https://docs.timescale.com/
       \endverb
     \endentry
   \enddatalist
